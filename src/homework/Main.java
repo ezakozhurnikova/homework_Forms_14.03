@@ -1,23 +1,39 @@
 package homework;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
-        Circle circle=new Circle(4,3.14);
-        double sCircle=circle.getArea();
-        Rectangle rectangle=new Rectangle(4,5);
-        int sRectangle= rectangle.getArea();
-        Square square=new Square(6);
-        int sSquare=square.getArea();
-        double[] area={sSquare,sCircle,sRectangle};
-        for (int i=0;i<area.length;i++){
-            System.out.println("Circle has area of "+area[1]);
-            System.out.println("Rectangle has area of "+area[2]);
-            System.out.println("Square has area of "+area[0]);
+        Shape rectangle=new Rectangle("Rectangle",5,10);
+        Shape square=new Square("Square",7);
+        Shape circle=new Circle("Circle", 10);
+
+
+        Shape[] shapes={circle,rectangle,square};
+        System.out.println("Shapes: ");
+        for (Shape s:shapes){
+            System.out.println(s.getDisplayName()+" has area of "+s.getArea());
         }
 
+        //homework 21.03
+        List<Shape> forms = new ArrayList<>();
+        forms.add(rectangle);
+        forms.add(circle);
+        forms.add(square);
 
+        Collections.sort(forms);
+        for (Shape s : forms) {
+            System.out.println(s.getDisplayName()+" has area of "+s.getArea());
+        }
 
-
+        }
+/*Square has area of 49.0
+Rectangle has area of 50.0
+Circle has area of 314.0
+*/
     }
-}
+

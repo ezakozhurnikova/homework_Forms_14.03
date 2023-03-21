@@ -1,16 +1,22 @@
 package homework;
 
-public class Circle {
-    int radius;
-    double pi=3.14;
-    public Circle(int radius,double pi){
-        this.pi=pi;
-        this.radius=radius;
+public class Circle extends Shape {
+    private double radius;
+    private static double PI = 3.14;
+
+    public Circle(String displayName, double radius) {
+        super(displayName);
+        this.radius = radius;
 
     }
-    public double getArea(){
-        double s=pi*(radius*radius);
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public double getArea() {
+        double s = PI * (radius * radius);
         return s;
-        }
+    }
 
 }

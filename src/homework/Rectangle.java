@@ -1,15 +1,18 @@
 package homework;
 
-public class Rectangle {
-    int length;
-    int width;
-    public Rectangle(int length,int width){
+public class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(String displayName,double length,double width){
+        super(displayName);
         this.length=length;
         this.width=width;
     }
 
-    public int getArea(){
-        int s=length*width;
+
+    public double getArea(){
+        double s=length*width;
         return s;
     }
 }
